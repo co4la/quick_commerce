@@ -1,9 +1,9 @@
 module Api::V1
   class UsersController < ApiController
     def show
-      @user = User.find(params[:id])
+      user = User.find(params[:id])
 
-      render json: @user
+      render json: user
     end
   end
 end
