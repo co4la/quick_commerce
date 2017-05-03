@@ -11,12 +11,12 @@ gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'active_model_serializers'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
 gem 'rack-cors'
 
 group :development, :test do

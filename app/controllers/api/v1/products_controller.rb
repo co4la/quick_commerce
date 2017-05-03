@@ -3,7 +3,7 @@ module Api::V1
     def index
       @products = Product.all
 
-      render json: @products
+      render json: @products.paginate(page: params[:page], per_page: 12)
     end
   end
 end
