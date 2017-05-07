@@ -15,15 +15,20 @@ user = User.create({
 
 shop_icon = parsed_content.css('.shop-icon')
 shop_image_url = shop_icon.css('img').attr('src').value
-shop_name = parsed_content.css('shop-name-and-title-container h1').text.strip
-shop_location = parsed_content.css('shop-location').text.strip
+shop_name = parsed_content.css('.shop-name-and-title-container h1').text.strip
+shop_location = parsed_content.css('.shop-location').text.strip
+
+shop_facebook_url = parsed_content.css('.about-section a[title="Facebook"]').attr('href').value
+shop_twitter_url = parsed_content.css('.about-section a[title="Twitter"]').attr('href').value
+
 shop = Shop.create({
   name: shop_name,
   location: shop_location,
   shop_image_url: shop_image_url,
+  facebook_url: shop_facebook_url,
+  twitter_url: shop_twitter_url,
   user_id: user.id
 })
-
 
 product_cards = parsed_content.css('.buyer-card')
 product_cards.each do |product_card|
